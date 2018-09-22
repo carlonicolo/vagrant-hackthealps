@@ -54,6 +54,10 @@ def animal(id):
             elem = e
     return render_template("animal.html", id=id, elem= elem)
 
+@app.route('/foodchain')
+def foodChain():
+    return render_template("foodchain.html", page='foodchain')
+
 
 @app.route('/api/product')
 def product():

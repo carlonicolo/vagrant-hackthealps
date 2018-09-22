@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Food Chain{% endblock %}
+{% block content %}
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+      <div class="row">
+
+         {% include 'menu.html' %}
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" >
+            <h1 class="h2">Food chain</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        <div class="card mx-auto" style="width: 75%">
+             <div class="card-header">
+                 Block #3
+            </div>
+            <div class="card-body">
+
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">index</th>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">timestamp</th>
+                      <td>2018-09-20 12:30:30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">sender</th>
+                      <td>Cow nr. 2</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">data</th>
+                      <td>Position: 6.73789 11.95899 Status: resting</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">previous_hash</th>
+                      <td>2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="card mx-auto" style="width: 75%">
+             <div class="card-header">
+                 Block #2
+            </div>
+            <div class="card-body">
+
+
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">index</th>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">timestamp</th>
+                      <td>2018-09-12 12:30:30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">sender</th>
+                      <td>Cow nr. 6</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">data</th>
+                      <td>Position: 6.73789 11.95899 Status: resting</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">previous_hash</th>
+                      <td>2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+
+    <div class="card mx-auto" style="width: 75%">
+             <div class="card-header">
+                 Block #1
+            </div>
+            <div class="card-body">
+
+
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row">index</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">timestamp</th>
+                      <td>2018-09-13 12:30:30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">sender</th>
+                      <td>Cow nr. 0</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">data</th>
+                      <td>Position: 6.73789 11.95899 Status: resting</td>
+                    </tr>
+                  <tr>
+                      <th scope="row">previous_hash</th>
+                      <td>2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+
+        {% endblock %}
+       </main>
+       </div>
+    </div>
