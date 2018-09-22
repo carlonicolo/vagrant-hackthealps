@@ -1,0 +1,216 @@
+ {% extends "base.html" %}
+
+{% block content %}
+    <div class="container-fluid" xmlns="http://www.w3.org/1999/html">
+      <div class="row">
+
+         {% include 'menu.html' %}
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" >
+            <h1 class="h2">Cow {{ id }}</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">Data</h5>
+                        <p class="card-text">
+                             <div class="table-responsive">
+                                <table class="table table-striped table-sm">
+                                  <tr>
+                                      <td>Code</td>
+                                       <td>{{ elem["code"] }}</td>
+                                  </tr>
+                                  <tr>
+                                      <td> Birthdate</td>
+                                       <td>{{ elem["birthdate"] }}</td>
+                                  </tr>
+                                    <tr>
+                                      <td>Birth Place</td>
+                                       <td>{{ elem["birthplace"]}}</td>
+                                  </tr>
+
+                                    <tr>
+                                      <td>Breed</td>
+                                       <td>{{ elem["race"] }}</td>
+                                  </tr>
+                                </tbody>
+                                </table>
+                              </div>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Activities in the last 2 weeks</h5>
+                    <div class="card-text">
+                        <canvas class="my-4 w-100" id="Pie"> </canvas>
+                        <script>
+                            var ctx = document.getElementById("Pie");
+                            var config = {
+                                    type: 'doughnut',
+                                    data: {
+                                            datasets: [{
+                                                data: [50, 20, 30],
+                                                backgroundColor: [
+                                                      "#f38b4a",
+                                                      "#56d798",
+                                                      "#ff8397"
+                                                    ],
+                                            }],
+                                            // These labels appear in the legend and in the tooltips when hovering different arcs
+                                            labels: [
+                                                'Grazing',
+                                                'Resting',
+                                                'In the cowshed'
+                                            ]
+                                        },
+                                    options: {
+                                        responsive: true,
+                                        legend: {
+                                            position: 'top',
+                                        },
+                                        animation: {
+                                            animateScale: true,
+                                            animateRotate: true
+                                        }
+                                    }
+                                };
+
+                         var myChart = new Chart(ctx, config)
+
+                    </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Locations in the last 2 weeks</h5>
+                    <div class="card-text">
+                        <div id="map-canvas" style="width: 100%; height: 300px;"></div>
+                            <script>
+
+                               var testData = {
+                                      max: 8,
+                                        data: [
+                                        {lat:46.74006588, lng:11.96481212, count:4},
+                                        {lat:46.73532736, lng:11.96448167, count:3},
+                                        {lat:46.74294422, lng:11.95859423, count:3},
+                                        {lat:46.73820051, lng:11.95521799, count:2},
+                                        {lat:46.73974779, lng:11.96370512, count:2},
+                                        {lat:46.74111662, lng:11.95515946, count:4},
+                                        {lat:46.74026311, lng:11.96093932, count:4},
+                                        {lat:46.7358951, lng:11.9514556, count:3},
+                                        {lat:46.73609679, lng:11.95760579, count:5},
+                                        {lat:46.73876348, lng:11.95702363, count:1},
+                                        {lat:46.73938948, lng:11.96056977, count:5},
+                                        {lat:46.73446983, lng:11.95891474, count:3},
+                                        {lat:46.74065719, lng:11.96319373, count:4},
+                                        {lat:46.74016366, lng:11.9636685, count:3},
+                                        {lat:46.73910146, lng:11.9520095, count:5},
+                                        {lat:46.73828579, lng:11.96491002, count:3},
+                                        {lat:46.73468762, lng:11.96151522, count:2},
+                                        {lat:46.73573438, lng:11.95481498, count:3},
+                                        {lat:46.7400227, lng:11.95597355, count:5},
+                                        {lat:46.74178218, lng:11.95366735, count:4},
+                                        {lat:46.73563914, lng:11.96051234, count:5},
+                                        {lat:46.73752587, lng:11.94945103, count:2},
+                                        {lat:46.73496469, lng:11.95519707, count:1},
+                                        {lat:46.74323922, lng:11.95608672, count:5},
+                                        {lat:46.73477892, lng:11.96190925, count:1},
+                                        {lat:46.73793607, lng:11.96157131, count:2},
+                                        {lat:46.74134601, lng:11.95781137, count:2},
+                                        {lat:46.74183481, lng:11.96267492, count:1},
+                                        {lat:46.7331801, lng:11.95930108, count:5},
+                                        {lat:46.74327921, lng:11.95566601, count:4},
+                                        {lat:46.73382523, lng:11.95331593, count:1},
+                                        {lat:46.73579523, lng:11.95972753, count:2},
+                                        {lat:46.73535024, lng:11.95142391, count:3},
+                                        {lat:46.73492201, lng:11.96099389, count:1},
+                                        {lat:46.74360629, lng:11.954923, count:1},
+                                        {lat:46.73498269, lng:11.96410393, count:5},
+                                        {lat:46.73910394, lng:11.95771385, count:5},
+                                        {lat:46.73473465, lng:11.96178343, count:3},
+                                        {lat:46.74095281, lng:11.95912409, count:5},
+                                        {lat:46.73507325, lng:11.95317974, count:4},
+                                        {lat:46.73529375, lng:11.95834745, count:3},
+                                        {lat:46.73688006, lng:11.95085379, count:3},
+                                        {lat:46.74363532, lng:11.95529308, count:4},
+                                        {lat:46.74078936, lng:11.95009218, count:2},
+                                        {lat:46.7343739, lng:11.95446947, count:2},
+                                        {lat:46.73890522, lng:11.95303577, count:5},
+                                        {lat:46.73810496, lng:11.95317015, count:4},
+                                        {lat:46.73396989, lng:11.9543176, count:5},
+                                        {lat:46.73858147, lng:11.95133127, count:4},
+                                        {lat:46.73579428, lng:11.95246341, count:5}]
+
+                               };
+
+                                    var baseLayer = L.tileLayer(
+                                      'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+                                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                                        maxZoom: 18
+                                      }
+                                    );
+
+                                    var cfg = {
+                                      // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+                                      // if scaleRadius is false it will be the constant radius used in pixels
+                                      "radius": 20,
+                                      "maxOpacity": .5,
+                                      // scales the radius based on map zoom
+                                      "scaleRadius": false,
+                                      // if set to false the heatmap uses the global maximum for colorization
+                                      // if activated: uses the data maximum within the current map boundaries
+                                      //   (there will always be a red spot with useLocalExtremas true)
+                                      "useLocalExtrema": true,
+                                      // which field name in your data represents the latitude - default "lat"
+                                      latField: 'lat',
+                                      // which field name in your data represents the longitude - default "lng"
+                                      lngField: 'lng',
+                                      // which field name in your data represents the data value - default "value"
+                                      valueField: 'count'
+                                    };
+
+
+                                    var heatmapLayer = new HeatmapOverlay(cfg);
+
+                                    var map = new L.Map('map-canvas', {
+                                      center: new L.LatLng(46.73879, 11.95819),
+                                      zoom: 14,
+                                      layers: [baseLayer, heatmapLayer]
+                                    });
+
+                                    heatmapLayer.setData(testData);
+
+                            </script>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+        {% endblock %}
+       </main>
+       </div>
+    </div>

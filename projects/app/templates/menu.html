@@ -1,6 +1,9 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
+
             <ul class="nav flex-column">
+                <img class="img-responsive" src="{{ url_for('static', filename='logo.jpg') }}">
+                <br>
               <li class="nav-item">
                   {% if page == 'home' %}
                         <a class="nav-link active" href="{{ url_for('home') }}">
@@ -8,7 +11,7 @@
                         <a class="nav-link" href="{{ url_for('home') }}">
                      {% endif %}
                   <span data-feather="home"></span>
-                  Dashboar <span class="sr-only">(current)</span>
+                  Dashboard <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">

@@ -20,16 +20,15 @@
               </button>
             </div>
           </div>
-
-          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-
+            <h2>Milk production</h2>
+          <canvas class="my-4 w-100" id="myChart" width="600" height="200"></canvas>
 
         </main>
       </div>
     </div>
 
     <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
     <script>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
@@ -48,10 +47,25 @@
         options: {
           scales: {
             yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
+                display: true,
+                ticks: {
+                    beginAtZero: false
+                 },
+                 scaleLabel: {
+							display: true,
+							labelString: 'Liters'
+						}
+                }],
+              xAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: false
+                 },
+                 scaleLabel: {
+							display: true,
+							labelString: 'Day'
+						}
+                }]
           },
           legend: {
             display: false,

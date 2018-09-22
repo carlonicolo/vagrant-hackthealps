@@ -25,14 +25,13 @@
                   <th>Birthdate</th>
                     <th>Birthplace</th>
                   <th>Code</th>
-                  <th>Race</th>
+                  <th>Breed</th>
                 </tr>
               </thead>
               <tbody>
-              {{ animals }}
                {% for elem in data %}
                 <tr>
-                  <td>{{ elem["ref"] }}</td>
+                  <td> <a href="{{ url_for('animal', id=elem["ref"]) }}"> {{ elem["ref"] }} </a> </td>
                   <td> {{ elem["birthdate"]}}</td>
                   <td>{{ elem["birthplace"]}}</td>
                   <td> {{ elem["code"]}}</td>
