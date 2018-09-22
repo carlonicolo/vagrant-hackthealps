@@ -61,7 +61,12 @@ def foodChain():
 
 @app.route('/api/product')
 def product():
-    product= {"prova": "prova"}
+    product= [
+        {"prova": "prova",
+
+
+         }
+    ]
     return jsonify(product)
 
 
