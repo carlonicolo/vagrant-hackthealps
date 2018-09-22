@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from faker import Faker
 import random
 
@@ -55,6 +55,10 @@ def animal(id):
     return render_template("animal.html", id=id, elem= elem)
 
 
+@app.route('/api/product')
+def product():
+    product= {"prova": "prova"}
+    return jsonify(product)
 
 
 if __name__ == '__main__':

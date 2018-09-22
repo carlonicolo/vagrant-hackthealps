@@ -34,7 +34,6 @@
         var cow = L.icon({
             iconUrl: '{{ url_for('static', filename = 'happy-cow.png') }}',
             iconSize: [40, 40],
-            popupAnchor: [-3, -76]
         });
 
         var cow1 = L.marker([46.73879, 11.95747], {icon: cow}).addTo(mymap);
@@ -44,12 +43,12 @@
         var cow5 = L.marker([46.73838, 11.95828], {icon: cow}).addTo(mymap);
         var cow6 =  L.marker([46.73853, 11.95812], {icon: cow}).addTo(mymap);
 
-        cow1.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        cow2.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        cow3.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        cow4.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        cow5.bindPopup("<b>Hello world!</b><br>I am a popup.");
-        cow6.bindPopup("<b>Hello world!</b><br>I am a popup.");
+        cow1.bindPopup("<b>Cow nr. 1</b><br>");
+        cow2.bindPopup("<b>Cow nr. 2</b><br>");
+        cow3.bindPopup("<b>Cow nr. 3</b><br>");
+        cow4.bindPopup("<b>Cow nr. 4</b><br>");
+        cow5.bindPopup("<b>Cow nr. 5</b><br>");
+        cow6.bindPopup("<b>Cow nr. 6</b><br>");
 
         function onMapClick(e) {
             popup
