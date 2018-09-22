@@ -11,13 +11,16 @@ fake = Faker()
 def hello_world():
     return 'Hello World!'
 
+
 @app.route('/')
 def home():
     return render_template("dashboard.html", page='home')
 
+
 @app.route('/map')
 def map():
     return render_template("map.html", page='map')
+
 
 @app.route('/animals')
 def animals():
@@ -34,6 +37,7 @@ def animals():
         elem["birthplace"]=random.choice(birthpalcelist)
         animals.append(elem)
     return render_template("animals.html", page='animals', data = animals)
+
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
